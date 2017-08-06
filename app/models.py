@@ -94,7 +94,7 @@ class DRGs(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='drgs'
+        db_table='diagnosis_related_groups'
         verbose_name='DRGs信息'
 
 
@@ -230,7 +230,7 @@ class ServicePackage(models.Model):
     #TODO
 
     class Meta:
-        db_table='servicepackage'
+        db_table='service_package'
         verbose_name='服务包信息'
 
 
@@ -308,5 +308,5 @@ class IndexGroup(models.Model):
     #TODO
 
     class Meta:
-        db_table='indexgroup'
+        db_table='index_group'
         verbose_name='指标组信息'
