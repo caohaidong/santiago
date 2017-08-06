@@ -5,6 +5,28 @@ from django.db import models
 
 
 # Create your models here.
+class Sector(models.Model):
+    """
+    # 科室信息表
+    # id        主键
+    # code      科室编码
+    # name      科室名称
+    # desc      描述
+    # created   创建日期
+    # updated   更新日期
+    """
+
+    id = models.AutoField(primary_key=True)
+    code = models.CharField(max_length=10)
+    name = models.CharField(max_length=50)
+    desc = models.TextField(max_length=200, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'sector'
+        verbose_name = '科室信息'
+
 
 class Version(models.Model):
     """
@@ -40,6 +62,10 @@ class Version(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table='version'
+        verbose_name='DRGs版本信息'
+
 
 class DRGs(models.Model):
     """
@@ -67,6 +93,10 @@ class DRGs(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table='drgs'
+        verbose_name='DRGs信息'
+
 
 class Diagnosis(models.Model):
     """
@@ -90,6 +120,10 @@ class Diagnosis(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table='diagnosis'
+        verbose_name='ICD-10诊断信息'
+
 
 class Operation(models.Model):
     """
@@ -111,24 +145,9 @@ class Operation(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-
-class Sector(models.Model):
-    """
-    # 科室信息表
-    # id        主键
-    # code      科室编码
-    # name      科室名称
-    # desc      描述
-    # created   创建日期
-    # updated   更新日期
-    """
-
-    id = models.AutoField(primary_key=True)
-    code = models.CharField(max_length=10)
-    name = models.CharField(max_length=50)
-    desc = models.TextField(max_length=200, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    class Meta:
+        db_table='operation'
+        verbose_name='ICD-9手术信息'
 
 
 class Treatment(models.Model):
@@ -149,6 +168,10 @@ class Treatment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table='treatment'
+        verbose_name='诊疗信息'
+
 
 class Medicines(models.Model):
     """
@@ -167,6 +190,10 @@ class Medicines(models.Model):
     desc = models.TextField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table='medicines'
+        verbose_name='药品信息'
 
 
 class Material(models.Model):
@@ -187,6 +214,10 @@ class Material(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table='material'
+        verbose_name='耗材信息'
+
 
 class ServicePackage(models.Model):
     """
@@ -196,6 +227,11 @@ class ServicePackage(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
+    #TODO
+
+    class Meta:
+        db_table='servicepackage'
+        verbose_name='服务包信息'
 
 
 class SpecialHandler(models.Model):
@@ -206,6 +242,11 @@ class SpecialHandler(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
+    #TODO
+
+    class Meta:
+        db_table='specialhandler'
+        verbose_name='特殊场景信息'
 
 
 class Index(models.Model):
@@ -251,6 +292,10 @@ class Index(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table='index'
+        verbose_name='指标信息'
+
 
 class IndexGroup(models.Model):
     """
@@ -260,3 +305,8 @@ class IndexGroup(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
+    #TODO
+
+    class Meta:
+        db_table='indexgroup'
+        verbose_name='指标组信息'
