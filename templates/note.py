@@ -1,4 +1,6 @@
 """
+# static readme
+
 定制admin模板
 我们下面将看到，你有几种工具来定制内建的admin模板，但是对于其它任务，例如需要自定义工作流或者细粒度权限
 你将需要阅读本章末尾讲到的定制admin视图
@@ -23,4 +25,5 @@ admin/<template>.html
 admin/bookstore/book/change_form.html
 admin/bookstore/change_form.html
 admin/change_form.html
+
 """
