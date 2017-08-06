@@ -6,8 +6,4 @@ from . import models
 
 # Register your models here.
 
-admin.register(models.Version)
-admin.register(models.DRGs)
-admin.register(models.Diagnosis)
-admin.register(models.Operation)
-admin.register(models.Sector)
+admin.site.register(models.Version)

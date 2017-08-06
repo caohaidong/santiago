@@ -27,6 +27,9 @@ class Sector(models.Model):
         db_table = 'sector'
         verbose_name = '科室信息'
 
+    def __str__(self):  # 在python2版本中使用的是__unique__
+        return self.name
+
 
 class Version(models.Model):
     """
@@ -58,13 +61,14 @@ class Version(models.Model):
     type = models.CharField(max_length=10, choices=TYPE_CHOICE, default='standard')
     area = models.CharField(max_length=20)
     status = models.CharField(max_length=10, choices=STATUS_CHOICE, default='valid')
-    desc = models.CharField(max_length=200, blank=True)
+    desc = models.TextField(max_length=200, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='version'
-        verbose_name='DRGs版本信息'
+        db_table = 'version'
+        verbose_name = 'DRGs版本信息'
+        verbose_name_plural = 'DRGs版本信息'
 
 
 class DRGs(models.Model):
@@ -94,8 +98,8 @@ class DRGs(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='diagnosis_related_groups'
-        verbose_name='DRGs信息'
+        db_table = 'diagnosis_related_groups'
+        verbose_name = 'DRGs信息'
 
 
 class Diagnosis(models.Model):
@@ -121,8 +125,8 @@ class Diagnosis(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='diagnosis'
-        verbose_name='ICD-10诊断信息'
+        db_table = 'diagnosis'
+        verbose_name = 'ICD-10诊断信息'
 
 
 class Operation(models.Model):
@@ -146,8 +150,8 @@ class Operation(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='operation'
-        verbose_name='ICD-9手术信息'
+        db_table = 'operation'
+        verbose_name = 'ICD-9手术信息'
 
 
 class Treatment(models.Model):
@@ -169,8 +173,8 @@ class Treatment(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='treatment'
-        verbose_name='诊疗信息'
+        db_table = 'treatment'
+        verbose_name = '诊疗信息'
 
 
 class Medicines(models.Model):
@@ -192,8 +196,8 @@ class Medicines(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='medicines'
-        verbose_name='药品信息'
+        db_table = 'medicines'
+        verbose_name = '药品信息'
 
 
 class Material(models.Model):
@@ -215,8 +219,8 @@ class Material(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='material'
-        verbose_name='耗材信息'
+        db_table = 'material'
+        verbose_name = '耗材信息'
 
 
 class ServicePackage(models.Model):
@@ -227,11 +231,12 @@ class ServicePackage(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
-    #TODO
+
+    # TODO
 
     class Meta:
-        db_table='service_package'
-        verbose_name='服务包信息'
+        db_table = 'service_package'
+        verbose_name = '服务包信息'
 
 
 class SpecialHandler(models.Model):
@@ -242,11 +247,12 @@ class SpecialHandler(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
-    #TODO
+
+    # TODO
 
     class Meta:
-        db_table='specialhandler'
-        verbose_name='特殊场景信息'
+        db_table = 'specialhandler'
+        verbose_name = '特殊场景信息'
 
 
 class Index(models.Model):
@@ -293,8 +299,8 @@ class Index(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table='index'
-        verbose_name='指标信息'
+        db_table = 'index'
+        verbose_name = '指标信息'
 
 
 class IndexGroup(models.Model):
@@ -305,8 +311,9 @@ class IndexGroup(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
-    #TODO
+
+    # TODO
 
     class Meta:
-        db_table='index_group'
-        verbose_name='指标组信息'
+        db_table = 'index_group'
+        verbose_name = '指标组信息'
