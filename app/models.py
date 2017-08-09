@@ -25,7 +25,8 @@ class Sector(models.Model):
 
     class Meta:
         db_table = 'sector'
-        verbose_name = '科室信息'
+        verbose_name = '12. 科室信息'
+        verbose_name_plural = '12. 科室信息'
 
     def __str__(self):  # 在python2版本中使用的是__unique__
         return self.name
@@ -67,8 +68,8 @@ class Version(models.Model):
 
     class Meta:
         db_table = 'version'
-        verbose_name = 'DRGs版本信息'
-        verbose_name_plural = 'DRGs版本信息'
+        verbose_name = '01. 病组版本信息'
+        verbose_name_plural = '01. 病组版本信息'
 
 
 class DRGs(models.Model):
@@ -99,7 +100,8 @@ class DRGs(models.Model):
 
     class Meta:
         db_table = 'diagnosis_related_groups'
-        verbose_name = 'DRGs信息'
+        verbose_name = '02. 病种分组信息'
+        verbose_name_plural = '02. 病种分组信息'
 
 
 class Diagnosis(models.Model):
@@ -126,7 +128,8 @@ class Diagnosis(models.Model):
 
     class Meta:
         db_table = 'diagnosis'
-        verbose_name = 'ICD-10诊断信息'
+        verbose_name = '03. 诊断信息'
+        verbose_name_plural = '03. 诊断信息'
 
 
 class Operation(models.Model):
@@ -151,7 +154,8 @@ class Operation(models.Model):
 
     class Meta:
         db_table = 'operation'
-        verbose_name = 'ICD-9手术信息'
+        verbose_name = '04. 手术信息'
+        verbose_name_plural = '04. 手术信息'
 
 
 class Treatment(models.Model):
@@ -174,7 +178,8 @@ class Treatment(models.Model):
 
     class Meta:
         db_table = 'treatment'
-        verbose_name = '诊疗信息'
+        verbose_name = '09. 诊疗信息'
+        verbose_name_plural = '09. 诊疗信息'
 
 
 class Medicines(models.Model):
@@ -197,7 +202,8 @@ class Medicines(models.Model):
 
     class Meta:
         db_table = 'medicines'
-        verbose_name = '药品信息'
+        verbose_name = '10. 药品信息'
+        verbose_name_plural = '10. 药品信息'
 
 
 class Material(models.Model):
@@ -220,7 +226,8 @@ class Material(models.Model):
 
     class Meta:
         db_table = 'material'
-        verbose_name = '耗材信息'
+        verbose_name = '11. 耗材信息'
+        verbose_name_plural = '11. 耗材信息'
 
 
 class ServicePackage(models.Model):
@@ -236,7 +243,8 @@ class ServicePackage(models.Model):
 
     class Meta:
         db_table = 'service_package'
-        verbose_name = '服务包信息'
+        verbose_name = '05. 服务包信息'
+        verbose_name_plural = '05. 服务包信息'
 
 
 class SpecialHandler(models.Model):
@@ -252,7 +260,8 @@ class SpecialHandler(models.Model):
 
     class Meta:
         db_table = 'specialhandler'
-        verbose_name = '特殊场景信息'
+        verbose_name = '06. 特殊场景信息'
+        verbose_name_plural = '06. 特殊场景信息'
 
 
 class Index(models.Model):
@@ -300,7 +309,8 @@ class Index(models.Model):
 
     class Meta:
         db_table = 'index'
-        verbose_name = '指标信息'
+        verbose_name = '07. 指标信息'
+        verbose_name_plural = '07. 指标信息'
 
 
 class IndexGroup(models.Model):
@@ -316,4 +326,5 @@ class IndexGroup(models.Model):
 
     class Meta:
         db_table = 'index_group'
-        verbose_name = '指标组信息'
+        verbose_name = '08. 指标组信息'
+        verbose_name_plural = '08. 指标组信息'
